@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Image Search</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/notiflix/2.1.3/notiflix-2.1.3.min.css"
-      integrity="sha512-Gw8Qysy5vgXa0JOpYs3ibcFzW4kWI2iFMFDe5vwo3TUV83fBRbdEqx5pZVKSHydww56gWbGd8/E/pL63wqzotA=="
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.8.0/simplelightbox.min.css"
-      integrity="sha512-izGJXhZl7nLIxYu92bBFEwnkRPbVNfawM30J2F2X5I/g00MH2zRx6+X9ujsir5sRzVgbmExDaU2QFHZo5YxvwA=="
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body>
-    <header class="header">
-      <div class="container">
-        <form class="search-form" id="search-form">
-          <input
-            type="text"
-            name="searchQuery"
-            autocomplete="off"
-            placeholder="Search images..."
-          />
-          <button type="submit">Search</button>
-        </form>
-      </div>
-    </header>
-    <main class="main">
-      <div class="gallery" id="gallery"></div>
-      <button type="button" class="load-more" id="load-more">Load more</button>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/notiflix/2.1.3/notiflix-2.1.3.min.js" integrity="sha512-HrFWmu6H5djysVi6nvlODBEwfdTLPQ6DFLdvCjx/iRS/LfAPs5bcF0owpQf/hjxW8jCzYQRf04A28olXjZsaaA==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.8.0/simple-lightbox.min.js" integrity="sha512-1Br8IYUvk6ZUAtTPSWVcZoW/fFg5r8nd9dD9ZskKd2mYtXNlvdSvGzg8jLoD9A6GvrGqW1Hd6bR97Pjx2c8V7Q==" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.7.0/simplelightbox.min.css" integrity="sha512-M5B0Cm7fWkOX3Xyb3V0f+hM4xmhs7GFbmoxFDeCt6vA0f0lVey5t+iIRGrm4GGvB7bQ3EdFMI9StjV6T4xNmGw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.7.0/simple-lightbox.min.js" integrity="sha512-j1G1p7+Gi3fOItUIGxZ1K2/F5xuyjvqgK+Q5vUy/b2Dn6QfH2+gIawW4pN5HJv4ODg3tYKteA1+YqFRvbOT2sw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="js/index.js" type="module"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Search</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/notiflix/2.1.3/notiflix-2.1.3.min.css" integrity="sha512-Gw8Qysy5vgXa0JOpYs3ibcFzW4kWI2iFMFDe5vwo3TUV83fBRbdEqx5pZVKSHydww56gWbGd8/E/pL63wqzotA=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.8.0/simplelightbox.min.css"
+    integrity="sha512-izGJXhZl7nLIxYu92bBFEwnkRPbVNfawM30J2F2X5I/g00MH2zRx6+X9ujsir5sRzVgbmExDaU2QFHZo5YxvwA=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-..." crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.7.0/simplelightbox.min.css"
+    integrity="sha512-M5B0Cm7fWkOX3Xyb3V0f+hM4xmhs7GFbmoxFDeCt6vA0f0lVey5t+iIRGrm4GGvB7bQ3EdFMI9StjV6T4xNmGw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <form class="search-form" id="search-form">
+        <input type="text" name="searchQuery" autocomplete="off" placeholder="Search images..." />
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+  </header>
+  <main class="main">
+    <div class="gallery" id="gallery"></div>
+    <button type="button" class="load-more" id="load-more">Load more</button>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/notiflix/2.1.3/notiflix-2.1.3.min.js"
+    integrity="sha512-HrFWmu6H5djysVi6nvlODBEwfdTLPQ6DFLdvCjx/iRS/LfAPs5bcF0owpQf/hjxW8jCzYQRf04A28olXjZsaaA=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.8.0/simple-lightbox.min.js"
+    integrity="sha512-1Br8IYUvk6ZUAtTPSWVcZoW/fFg5r8nd9dD9ZskKd2mYtXNlvdSvGzg8jLoD9A6GvrGqW1Hd6bR97Pjx2c8V7Q=="
+    crossorigin="anonymous"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.7.0/simple-lightbox.min.js"
+    integrity="sha512-j1G1p7+Gi3fOItUIGxZ1K2/F5xuyjvqgK+Q5vUy/b2Dn6QfH2+gIawW4pN5HJv4ODg3tYKteA1+YqFRvbOT2sw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="js/index.js" type="module"></script>
+</body>
+
 </html>
