@@ -40,7 +40,8 @@ function searchImages(query, page) {
     .then(response => {
       const images = response.data.hits;
       if (page === 1) {
-        gallery.innerHTML = ''; // Clear gallery on the first page
+        gallery.innerHTML = ''; 
+        loadMoreBtn.style.display = 'none'; // Clear gallery on the first page
       }
 
       if (images.length > 0) {
